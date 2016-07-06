@@ -9,7 +9,7 @@ Allows you to use glob syntax in imports (i.e. `@import "dir/*.sass"`). Use as a
 ### Example
 
 ##### gulpfile.js
-````
+```javascript
 var nodeSassGlobbing = require('node-sass-globbing');
 
 gulp.task('sass', function () {
@@ -18,18 +18,18 @@ gulp.task('sass', function () {
 			.pipe(gulp.dest('css'))			
 }));
 	
-````
+```
 
 Then you can import globs!
 
 ##### foo.sass
-````
+```css
 @import "variables/**/*.scss"
 @import "mixins/**/*.scss"
-````
+```
 
 It also works with sourcemaps:
-````
+```javascript
 var nodeSassGlobbing = require('node-sass-globbing'),
 	sourcemaps = require('gulp-sourcemaps');
 
@@ -41,14 +41,14 @@ gulp.task('sass', function () {
 			.pipe(gulp.dest('css'))			
 }));
 
-````
+```
 
 
 ### Tests
 
-````
+```
 npm test
-````
+```
 
 ### License
 Available under the [MIT License](LICENSE.md).
