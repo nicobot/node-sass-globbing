@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/britco/node-sass-globbing",
   "dependencies": {
-    "glob": "^5.0.5"
+    "glob": "^7.0.5"
   },
   "devDependencies": {
     "chai": "^2.3.0",
