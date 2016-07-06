@@ -50,5 +50,18 @@ gulp.task('sass', function () {
 npm test
 ```
 
+### Tests (Docker)
+
+You can also run the tests through docker. 
+Initially the repository would need to install the dependencies, you can do that with:
+```
+docker run -it --rm --name my-running-script -v "$PWD":/usr/src/app -w /usr/src/app node:4 npm install
+```
+
+After dependencies are installed run the tests with:
+```
+docker run -it --rm --name my-running-script -v "$PWD":/usr/src/app -w /usr/src/app node:4 npm test
+```
+
 ### License
 Available under the [MIT License](LICENSE.md).
