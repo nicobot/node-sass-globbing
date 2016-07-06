@@ -8,20 +8,29 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/britco/node-sass-globbing.git"
+    "url": "https://github.com/nico/node-sass-globbing.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/britco/node-sass-globbing/issues"
+    "url": "https://github.com/nico/node-sass-globbing/issues"
   },
-  "homepage": "https://github.com/britco/node-sass-globbing",
+  "homepage": "https://github.com/nico/node-sass-globbing",
   "dependencies": {
-    "glob": "^7.0.5"
+    "glob": "^7.0.5",
+    "gulp-util": "^3.0"
   },
   "devDependencies": {
     "chai": "^2.3.0",
     "mocha": "^2.2.4",
-    "node-sass": "^2.1.1"
-  }
+    "gulp-sass": "^2.3.2",
+    "gulp": "^3.8.11",
+    "gulp-postcss": "^5.1.10",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-tap": "^0.1.3",
+    "mocha": "^2.2.1",
+    "rimraf": "^2.4.3",
+    "should": "^8.3.1"
+  },
+  "start": "npm test"
 }
