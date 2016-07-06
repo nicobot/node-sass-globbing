@@ -24,8 +24,8 @@ Then you can import globs!
 
 ##### foo.sass
 ```css
-@import "variables/**/*.scss"
-@import "mixins/**/*.scss"
+@import "variables/**/*.scss";
+@import "mixins/**/*.scss";
 ```
 
 It also works with sourcemaps:
