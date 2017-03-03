@@ -36,7 +36,7 @@ describe('simple', function() {
     
     gulp.src(inputFile, {base: 'test/fixtures'})
       .pipe(sourcemaps.init())
-      .pipe(sass({importer: nodeSassGlobbing, outputStyle: 'compressed'}))
+      .pipe(sass({importer: nodeSassGlobbing(), outputStyle: 'compressed'}))
       .pipe(gulp.dest(FIXTURES_DIR))
       .pipe(tap(function(file) {
         should.exist(file.sourceMap);
@@ -53,7 +53,7 @@ describe('simple', function() {
     var outputFile = path.join(FIXTURES_DIR, '/simple_scss/output.css')
 
     var sassFile = createVinyl('input.scss', '/simple_scss');
-    var stream = sass({importer: nodeSassGlobbing, outputStyle: 'compressed'});
+    var stream = sass({importer: nodeSassGlobbing({sync:true}), outputStyle: 'compressed'});
     stream.on('data', function(cssFile) {
       should.exist(cssFile);
       should.exist(cssFile.path);
@@ -74,7 +74,7 @@ describe('simple', function() {
     var outputFile = path.join(FIXTURES_DIR, '/simple_sass/output.css')
 
     var sassFile = createVinyl('input.sass', '/simple_sass');
-    var stream = sass({importer: nodeSassGlobbing, outputStyle: 'compressed'});
+    var stream = sass({importer: nodeSassGlobbing(), outputStyle: 'compressed'});
     stream.on('data', function(cssFile) {
       should.exist(cssFile);
       should.exist(cssFile.path);
