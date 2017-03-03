@@ -14,7 +14,7 @@ var nodeSassGlobbing = require('node-sass-globbing');
 
 gulp.task('sass', function () {
 	return gulp.src('styles/**/*.{scss,sass}')
-			.pipe(sass({importer: nodeSassGlobbing}).on('error', sass.logError)))
+			.pipe(sass({importer: nodeSassGlobbing()}).on('error', sass.logError)))
 			.pipe(gulp.dest('css'))			
 }));
 	
@@ -34,9 +34,12 @@ var nodeSassGlobbing = require('node-sass-globbing'),
 	sourcemaps = require('gulp-sourcemaps');
 
 gulp.task('sass', function () {
+	var opts = {
+		sync: true, // this will make the glob to perform a synchronous search
+	}
 	return gulp.src('styles/**/*.{scss,sass}')
 			.pipe(sourcemaps.init())
-			.pipe(sass({importer: nodeSassGlobbing}).on('error', sass.logError)))
+			.pipe(sass({importer: nodeSassGlobbing(opts)}).on('error', sass.logError)))
 			.pipe(sourcemaps.write('./maps'))
 			.pipe(gulp.dest('css'))			
 }));
