@@ -19,10 +19,10 @@ module.exports = function(opts) {
   if (opts === undefined) {
     opts = {};
   }
-  
-  opts = extend(opts, {
+
+  opts = extend({
     sync: false,
-  });
+  }, opts);
 
   return function(url, prev, done) {
     if(!glob.hasMagic(url)) {
