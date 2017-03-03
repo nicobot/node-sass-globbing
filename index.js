@@ -16,6 +16,10 @@ function extend (origin, add) {
 
 module.exports = function(opts) {
 
+  if (opts === undefined) {
+    opts = {};
+  }
+  
   opts = extend(opts, {
     sync: false,
   });
